@@ -17,9 +17,12 @@ There are 2 methods to install 1. being the fancy .sh file that can be run in on
 > * It will create a run file name run.sh
 > * There will be a destroy bot file named nukebot.sh this will uninstall the bot completely as possible
 >
->Soon to be added:
+> Soon to be added:
 >> * Auto update will be included in the run.sh and if there is a update it will ask the user if they want to update
-> >* Improved installer
+>> * Improved installer
+>
+> Might never happen: 
+>> * A GUI installer
 
 ### 2
 Use [node.js](https://nodejs.org/) and other things to install Potato.Js.
