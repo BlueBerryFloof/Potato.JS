@@ -1,10 +1,11 @@
 const { Command } = require('discord.js-commando');
+const { discord_owner_id } = require('../../config.json');
 
 module.exports = class PruneCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'prune',
-      aliases: ['delete-messages', 'bulk-delete'],
+      aliases: ['delete-messages', 'purge' , 'bulk-delete'],
       description: 'Delete up to 99 recent messages',
       group: 'guild',
       memberName: 'prune',
@@ -28,6 +29,17 @@ module.exports = class PruneCommand extends Command {
       message.channel
         .bulkDelete(deleteCount)
         .then(messages => message.say(`Deleted ${messages.size} messages`))
+        .catch(e => {
+          console.error(e);
+          return message.say(
+            'Something went wrong when trying to delete messages :('
+          );
+        });
+    } else if (message.author == discord_owner_id) {
+
+      message.channel
+        .bulkDelete(deleteCount)
+        .then(messages => message.say(`Force deleted ${messages.size} messages by bot owner`))
         .catch(e => {
           console.error(e);
           return message.say(
