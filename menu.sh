@@ -107,6 +107,7 @@ show_menus2() {
 	echo "2. Enable a Command"
 	echo "3. Disable a Command"
 	echo "4. Back"
+	echo "5. Exit"
 }
 menukill() {
 	rm disable.sh
@@ -142,12 +143,13 @@ read_options1() {
 }
 read_options2() {
 	local choicetwo
-	read -p "Enter choice [ 1 - 4 ] " choicetwo
+	read -p "Enter choice [ 1 - 5 ] " choicetwo
 	case $choicetwo in
 	1) rebuild ;;
 	2) enable ;;
 	3) disable ;;
 	4) back ;;
+	5) menukill ;;
 	*) echo -e "${RED}Error...${STD}" && sleep 2 ;;
 	esac
 }
