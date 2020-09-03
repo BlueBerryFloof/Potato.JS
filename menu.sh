@@ -38,7 +38,7 @@ update() {
 }
 edit() {
 	show_menus2
-	read_options222
+	read_options2
 	sleep 1
 }
 back() {
