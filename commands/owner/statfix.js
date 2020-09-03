@@ -34,8 +34,13 @@ module.exports = class RebootCommand extends Command {
                 message.say('Activity Status set to ' + text)
             }
         } else {
+            message.client.user.setActivity(`${prefix}help`, {
+                type: 'WATCHING',
+                url: 'http://blueberry.schutte.net'
+            });
+            message.say('Activity Status Reset')
             return message.say(
-                'You do not have the permissions to do this action'
+                'You do not have the permissions change the status from its default.'
             );
         }
     }

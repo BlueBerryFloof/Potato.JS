@@ -10,7 +10,7 @@ module.exports = class AnimegifCommand extends Command {
       aliases: ['anime-gif', 'anime-gifs'],
       memberName: 'animegif',
       description:
-        'Provide a name of an anime show or character and I will return a gif!',
+        'Replies with a random anime gif!',
       throttling: {
         usages: 1,
         duration: 4

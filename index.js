@@ -72,4 +72,16 @@ client.on('guildMemberAdd', member => {
   channel.send(`Hello ${member}!`);
 });
 
+var stattime = 3600000;
+function reminder() {
+  client.user.setActivity(`${prefix}help`, {
+    type: 'WATCHING',
+    url: 'http://blueberry.schutte.net'
+  });
+  console.log('stat set')
+  setTimeout(reminder, stattime);
+}
+
+setTimeout(reminder, stattime);
+
 client.login(token);

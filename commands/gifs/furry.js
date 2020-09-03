@@ -26,17 +26,6 @@ module.exports = class FurryCommand extends Command {
        .split('\n');
      const link = linkArray[Math.floor(Math.random() * linkArray.length)];
      return message.say(link);
-    /*
-     fetch(
-       `https://api.tenor.com/v1/random?key=${tenorAPI}&q=jojos-bizarre-adventure&limit=1`
-     )
-       .then(res => res.json())
-       .then(json => message.say(json.results[0].url))
-       .catch(e => {
-         message.say('Failed to fetch a gif :slight_frown:');
-         return console.error(e);
-       })
-    */
    } catch (e) {
      message.say('Failed to fetch a gif :slight_frown:');
      return console.error(e);
