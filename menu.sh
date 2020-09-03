@@ -86,7 +86,7 @@ show_menus1() {
 		echo "~~~~~~~~~~~~~~~~~~~~~"
 		echo "1. Install Potato.JS"
 		echo "2. Update Potato.JS"
-		echo "3. Edit Potato.JS"
+		echo "${RED}3. Edit Potato.JS - W.I.P.${STD}"
 		echo "4. Remove Potato.JS"
 		echo "5. Exit"
 	else
