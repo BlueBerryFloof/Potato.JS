@@ -91,6 +91,8 @@ menukill() {
 	rm enable.sh
 	rm rebuild.sh
 	rm menu.sh
+	rm remove.sh
+	rm update.sh
 	exit 0
 }
 read_options1() {
