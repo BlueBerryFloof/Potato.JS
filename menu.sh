@@ -24,10 +24,10 @@ install() {
 		pause
 		exit 0
 	fi
-	#git clone https://github.com/BlueBerryFloof/Potato.JS.git
-	#mv ./Potato.JS ./pjs
-	#cd ./pjs
-	#sudo npm i
+	git clone https://github.com/BlueBerryFloof/Potato.JS.git
+	mv ./Potato.JS ./pjs
+	cd ./pjs
+	sudo npm i
 	edit
 }
 update() {
@@ -38,6 +38,10 @@ edit() {
 	show_menus2
 	read_options2
 	sleep 1
+}
+back() {
+	show_menus1
+	read_options1
 }
 rebuild() {
 	echo "rebuild called"
@@ -76,6 +80,13 @@ show_menus2() {
 	echo "3. Disable a Command"
 	echo "4. Back"
 }
+menukill() {
+	rm disable.sh
+	rm enable.sh
+	rm rebuild.sh
+	rm menu.sh
+	exit 0
+}
 read_options1() {
 	local choiceone
 	read -p "Enter choice [ 1 - 5 ] " choiceone
@@ -84,7 +95,7 @@ read_options1() {
 	2) update ;;
 	3) edit ;;
 	4) remove ;;
-	5) exit 0 ;;
+	5) menukill 0 ;;
 	*) echo -e "${RED}Error...${STD}" && sleep 2 ;;
 	esac
 }
@@ -95,7 +106,7 @@ read_options2() {
 	1) rebuild ;;
 	2) enable ;;
 	3) disable ;;
-	4) exit 0 ;;
+	4) back ;;
 	*) echo -e "${RED}Error...${STD}" && sleep 2 ;;
 	esac
 }
