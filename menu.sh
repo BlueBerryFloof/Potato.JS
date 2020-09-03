@@ -1,3 +1,4 @@
+MAIN =$(pwd)
 DEP_ONE=$(which git)
 DEP_TWO=$(which npm)
 DEP_THREE=$(which node)
@@ -28,6 +29,7 @@ install() {
 	mv ./Potato.JS ./pjs
 	cd ./pjs
 	sudo npm i
+	cd ../
 	edit
 }
 update() {
@@ -36,7 +38,7 @@ update() {
 }
 edit() {
 	show_menus2
-	read_options2
+	read_options222
 	sleep 1
 }
 back() {
@@ -44,20 +46,22 @@ back() {
 	read_options1
 }
 rebuild() {
-	echo "rebuild called"
-	sleep 1
+	sh rebuild.sh
+	show_menus2
+	read_options2
 }
 enable() {
-	echo "enable called"
-	sleep 1
+	sh enable.sh
+	show_menus2
+	read_options2
 }
 disable() {
-	echo "disable called"
-	sleep 1
+	sh disable.sh
+	show_menus2
+	read_options2
 }
 remove() {
-	echo "remove called"
-	sleep 1
+	sudo rm ./pjs
 }
 show_menus1() {
 	clear
