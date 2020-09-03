@@ -33,8 +33,7 @@ install() {
 	edit
 }
 update() {
-	echo "update called"
-	sleep 1
+	sh update.sh
 }
 edit() {
 	show_menus2
@@ -47,21 +46,24 @@ back() {
 }
 rebuild() {
 	sh rebuild.sh
+	sleep 1
 	show_menus2
 	read_options2
 }
 enable() {
 	sh enable.sh
+	sleep 1
 	show_menus2
 	read_options2
 }
 disable() {
 	sh disable.sh
+	sleep 1
 	show_menus2
 	read_options2
 }
 remove() {
-	sudo rm -r ./pjs
+	sh remove.sh
 }
 show_menus1() {
 	clear
