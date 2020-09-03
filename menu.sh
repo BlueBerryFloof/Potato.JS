@@ -28,8 +28,9 @@ install() {
 	git clone https://github.com/BlueBerryFloof/Potato.JS.git
 	mv ./Potato.JS ./pjs
 	cd ./pjs
-	sudo npm i
+	npm i
 	cd ../
+	sleep 10
 	edit
 }
 update() {
