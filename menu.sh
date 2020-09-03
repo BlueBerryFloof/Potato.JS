@@ -33,11 +33,22 @@ install() {
 	edit
 }
 update() {
-	sh update.sh
+	if [ -d "./pjs" ]; then
+		sh update.sh
+	else
+		echo "P.JS is not installed or the directory has been renamed"
+		pause
+	fi
+	sleep 1
 }
 edit() {
-	show_menus2
-	read_options2
+	if [ -d "./pjs" ]; then
+		show_menus2
+		read_options2
+	else
+		echo "P.JS is not installed or the directory has been renamed"
+		pause
+	fi
 	sleep 1
 }
 back() {
@@ -64,6 +75,7 @@ disable() {
 }
 remove() {
 	sh remove.sh
+	sleep 1
 }
 show_menus1() {
 	clear
