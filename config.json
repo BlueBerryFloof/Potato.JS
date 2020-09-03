@@ -1,9 +1,0 @@
-{
-    "prefix": "prefix of choice",
-    "discord_owner_id": "get the dev's snoflake and put it here",
-    "bot_id": "get the bot's snoflake and put it here",
-    "token": " - PUT BOT TOKEN HERE - ",
-    "tenorAPI": "MIUI12MIBEXV",
-    "newsAPI": "get api key at https://newsapi.org/ ",
-    "youtubeAPI": "get api key at https://console.developers.google.com/apis/library/youtube.googleapis.com"
-  }
