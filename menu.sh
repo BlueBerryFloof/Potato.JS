@@ -109,7 +109,7 @@ read_options1() {
 }
 read_options2() {
 	local choicetwo
-	read -p "Enter choice [ 1 - 5 ] " choicetwo
+	read -p "Enter choice [ 1 - 4 ] " choicetwo
 	case $choicetwo in
 	1) rebuild ;;
 	2) enable ;;
