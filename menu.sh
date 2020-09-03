@@ -126,7 +126,7 @@ read_options1() {
 		2) update ;;
 		3) edit ;;
 		4) remove ;;
-		5) menukill 0 ;;
+		5) menukill ;;
 		*) echo -e "${RED}Error...${STD}" && sleep 2 ;;
 		esac
 	else
@@ -134,6 +134,7 @@ read_options1() {
 		read -p "Enter choice [ 1 - 2 ] " choiceone
 		case $choiceone in
 		1) install ;;
+		2)menukill ;;
 		*) echo -e "${RED}Error...${STD}" && sleep 2 ;;
 		esac
 	fi
