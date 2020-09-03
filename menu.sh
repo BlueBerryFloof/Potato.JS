@@ -78,15 +78,24 @@ remove() {
 	sleep 1
 }
 show_menus1() {
-	clear
-	echo "~~~~~~~~~~~~~~~~~~~~~"
-	echo " P O T A T O . J S"
-	echo "~~~~~~~~~~~~~~~~~~~~~"
-	echo "1. Install Potato.JS"
-	echo "2. Update Potato.JS"
-	echo "3. Edit Potato.JS"
-	echo "4. Remove Potato.JS"
-	echo "5. Exit"
+	if [ -d "./pjs" ]; then
+		clear
+		echo "~~~~~~~~~~~~~~~~~~~~~"
+		echo " P O T A T O . J S"
+		echo "~~~~~~~~~~~~~~~~~~~~~"
+		echo "1. Install Potato.JS"
+		echo "2. Update Potato.JS"
+		echo "3. Edit Potato.JS"
+		echo "4. Remove Potato.JS"
+		echo "5. Exit"
+	else
+		clear
+		echo "~~~~~~~~~~~~~~~~~~~~~"
+		echo " P O T A T O . J S"
+		echo "~~~~~~~~~~~~~~~~~~~~~"
+		echo "1. Install Potato.JS"
+		echo "2. Exit"
+	fi
 }
 show_menus2() {
 	clear
@@ -108,16 +117,26 @@ menukill() {
 	exit 0
 }
 read_options1() {
-	local choiceone
-	read -p "Enter choice [ 1 - 5 ] " choiceone
-	case $choiceone in
-	1) install ;;
-	2) update ;;
-	3) edit ;;
-	4) remove ;;
-	5) menukill 0 ;;
-	*) echo -e "${RED}Error...${STD}" && sleep 2 ;;
-	esac
+	if [ -d "./pjs" ]; then
+		local choiceone
+		read -p "Enter choice [ 1 - 5 ] " choiceone
+		case $choiceone in
+		1) install ;;
+		2) update ;;
+		3) edit ;;
+		4) remove ;;
+		5) menukill 0 ;;
+		*) echo -e "${RED}Error...${STD}" && sleep 2 ;;
+		esac
+	else
+		local choiceone
+		read -p "Enter choice [ 1 - 2 ] " choiceone
+		case $choiceone in
+		1) install ;;
+		*) echo -e "${RED}Error...${STD}" && sleep 2 ;;
+		esac
+	fi
+
 }
 read_options2() {
 	local choicetwo
