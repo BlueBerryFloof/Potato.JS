@@ -1,3 +1,4 @@
+VER="1.7.1~~"
 MAIN =$(pwd)
 DEP_ONE=$(which git)
 DEP_TWO=$(which npm)
@@ -81,7 +82,7 @@ remove() {
 show_menus1() {
 	if [ -d "./pjs" ]; then
 		clear
-		echo "~~~~~~~~~~~~~~~~~~~~~"
+		echo "~V${VER}~~~~~~~~~~~~"
 		echo " P O T A T O . J S"
 		echo "~~~~~~~~~~~~~~~~~~~~~"
 		echo "1. Install Potato.JS"
@@ -91,7 +92,7 @@ show_menus1() {
 		echo "5. Exit"
 	else
 		clear
-		echo "~~~~~~~~~~~~~~~~~~~~~"
+		echo "~V${VER}~~~~~~~~~~~~"
 		echo " P O T A T O . J S"
 		echo "~~~~~~~~~~~~~~~~~~~~~"
 		echo "1. Install Potato.JS"
@@ -100,7 +101,7 @@ show_menus1() {
 }
 show_menus2() {
 	clear
-	echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	echo "~V${VER}~~~~~~~~~~~~~~~~~~~~~~~~"
 	echo " P O T A T O . J S - C O N F I G"
 	echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 	echo "1. Rebuild Config"
@@ -135,7 +136,7 @@ read_options1() {
 		read -p "Enter choice [ 1 - 2 ] " choiceone
 		case $choiceone in
 		1) install ;;
-		2)menukill ;;
+		2) menukill ;;
 		*) echo -e "${RED}Error...${STD}" && sleep 2 ;;
 		esac
 	fi
