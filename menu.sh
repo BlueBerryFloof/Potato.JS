@@ -61,7 +61,7 @@ disable() {
 	read_options2
 }
 remove() {
-	sudo rm ./pjs
+	sudo rm -r ./pjs
 }
 show_menus1() {
 	clear
