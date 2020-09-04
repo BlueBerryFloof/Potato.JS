@@ -31,10 +31,15 @@ install() {
 	cd ./pjs
 	npm i
 	cd ../
-	sleep 10
+	rm ./pjs/QI.sh
+	echo "echo 'Starting Bot!'" >run.sh
+	echo "node index.js" >run.sh
+	echo "Bot Run File Made"
+	sleep 1
 	edit
 }
 update() {
+	wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/update.sh
 	if [ -d "./pjs" ]; then
 		sh update.sh
 	else
@@ -42,6 +47,7 @@ update() {
 		pause
 	fi
 	sleep 1
+	rm update.sh
 }
 edit() {
 	if [ -d "./pjs" ]; then
@@ -58,26 +64,35 @@ back() {
 	read_options1
 }
 rebuild() {
+	wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/rebuild.sh
 	sh rebuild.sh
 	sleep 1
 	show_menus2
 	read_options2
+	rm -f rebuild.sh
 }
 enable() {
+	wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/enable.sh
 	sh enable.sh
 	sleep 1
 	show_menus2
 	read_options2
+	rm -f enable.sh
 }
 disable() {
+	wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/disable.sh
 	sh disable.sh
 	sleep 1
 	show_menus2
 	read_options2
+	rm -f disable.sh
 }
 remove() {
+	wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/remove.sh
 	sh remove.sh
 	sleep 1
+	rm -f remove.sh
+
 }
 show_menus1() {
 	if [ -d "./pjs" ]; then
@@ -85,11 +100,10 @@ show_menus1() {
 		echo "~V${VER}~~~~~~~~~~~~"
 		echo " P O T A T O . J S"
 		echo "~~~~~~~~~~~~~~~~~~~~~"
-		echo "1. Install Potato.JS"
-		echo "2. Update Potato.JS"
-		echo "${RED}3. Edit Potato.JS - W.I.P.${STD}"
-		echo "4. Remove Potato.JS"
-		echo "5. Exit"
+		echo "1. Update Potato.JS"
+		echo "${RED}2. Edit Potato.JS - W.I.P.${STD}"
+		echo "3. Remove Potato.JS"
+		echo "4. Exit"
 	else
 		clear
 		echo "~V${VER}~~~~~~~~~~~~"
@@ -111,24 +125,18 @@ show_menus2() {
 	echo "5. Exit"
 }
 menukill() {
-	rm disable.sh
-	rm enable.sh
-	rm rebuild.sh
-	rm menu.sh
-	rm remove.sh
-	rm update.sh
+	rm -f menu.sh
 	exit 0
 }
 read_options1() {
 	if [ -d "./pjs" ]; then
 		local choiceone
-		read -p "Enter choice [ 1 - 5 ] " choiceone
+		read -p "Enter choice [ 1 - 4 ] " choiceone
 		case $choiceone in
-		1) install ;;
-		2) update ;;
-		3) edit ;;
-		4) remove ;;
-		5) menukill ;;
+		1) update ;;
+		2) edit ;;
+		3) remove ;;
+		4) menukill ;;
 		*) echo -e "${RED}Error...${STD}" && sleep 2 ;;
 		esac
 	else

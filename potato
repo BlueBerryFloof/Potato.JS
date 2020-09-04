@@ -1,0 +1,2 @@
+wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/menu.sh
+sh menu.sh
