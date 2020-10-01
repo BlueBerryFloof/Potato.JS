@@ -16,4 +16,4 @@ cd ./pjs
 npm i
 cd ../
 rm -rf Potato.JS
-rm update.sh
+rm -f update.sh

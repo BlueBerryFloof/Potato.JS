@@ -7,16 +7,19 @@ pause() {
 if [ -z "$DEP_ONE" ]; then
     echo "Missing git please install and try again"
     pause
+    rm -f install.sh
     exit 0
 fi
 if [ -z "$DEP_TWO" ]; then
     echo "Missing npm please install and try again"
     pause
+    rm -f install.sh
     exit 0
 fi
 if [ -z "$DEP_THREE" ]; then
     echo "Missing node please install and try again"
     pause
+    rm -f install.sh
     exit 0
 fi
 git clone https://github.com/BlueBerryFloof/Potato.JS.git
