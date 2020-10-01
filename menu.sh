@@ -1,4 +1,4 @@
-VER="1.7.3~~"
+VER="1.8.2~~"
 MAIN =$(pwd)
 EDITOR=vim
 PASSWD=/etc/passwd
@@ -24,8 +24,8 @@ edit() {
 	sleep 1
 }
 back() {
-	show_menus1
-	read_options1
+	show_menu
+	read_options
 }
 rebuild() {
 	wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/rebuild.sh
@@ -100,6 +100,6 @@ read_options() {
 }
 trap '' SIGINT SIGQUIT SIGTSTP
 while true; do
-	show_menus1
-	read_options1
+	show_menu
+	read_options
 done

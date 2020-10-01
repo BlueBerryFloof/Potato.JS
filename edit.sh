@@ -4,7 +4,10 @@ pause() {
 if [ 1 -eq 0 ]; then
     show_menu
     read_options
-
+    back() {
+        show_menus1
+        read_options1
+    }
     show_menu() {
         clear
         echo "~V${VER}~~~~~~~~~~~~~~~~~~~~~~~~"
