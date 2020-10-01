@@ -1,10 +1,6 @@
 pause() {
     read -p "Press [Enter] key to continue..." fackEnterKey
 }
-while true; do
-	show_menu2
-	read_options2
-done
 back() {
     return
 }
@@ -57,5 +53,8 @@ read_options2() {
     *) echo -e "${RED}Error...${STD}" && sleep 2 ;;
     esac
 }
-
+while true; do
+	show_menu2
+	read_options2
+done
 rm -f testedit.sh
