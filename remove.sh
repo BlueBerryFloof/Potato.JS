@@ -3,7 +3,6 @@ pause() {
 }
 if [ -d "./pjs" ]; then
     rm -rf ./pjs
-    rm -rf run.sh
 else
     echo "P.JS is not installed or the directory has been renamed"
     pause
