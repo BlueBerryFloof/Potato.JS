@@ -63,7 +63,7 @@ read_options() {
 		case $choiceone in
 		1) update ;;
 		2) edit ;;
-		2a) testedit ;;
+		a) testedit ;;
 		3) remove ;;
 		4) menukill ;;
 		*) echo -e "${RED}Error...${STD}" && sleep 2 ;;
