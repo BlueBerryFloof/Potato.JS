@@ -24,8 +24,8 @@ edit() {
 	sleep 1
 }
 testedit() {
-	wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/edit.sh
-	sh edit.sh test
+	wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/testedit.sh
+	sh testedit.sh
 	sleep 1
 }
 remove() {
