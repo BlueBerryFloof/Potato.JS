@@ -1,7 +1,7 @@
 pause() {
     read -p "Press [Enter] key to continue..." fackEnterKey
 }
-if [ 1 -eq 0 ]; then
+if [ "test" == $1 ]; then
     show_menu
     read_options
     back() {
