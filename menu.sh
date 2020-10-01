@@ -24,7 +24,7 @@ edit() {
 	sleep 1
 }
 back() {
-	show_menu
+	show_menus
 	read_options
 }
 rebuild() {
@@ -100,6 +100,6 @@ read_options() {
 }
 trap '' SIGINT SIGQUIT SIGTSTP
 while true; do
-	show_menu
+	show_menus
 	read_options
 done
