@@ -6,6 +6,32 @@ read_options
 back() {
     return
 }
+rebuild() {
+    wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/rebuild.sh
+    sh rebuild.sh
+    sleep 1
+    show_menu
+    read_options
+}
+enable() {
+    wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/enable.sh
+    sh enable.sh
+    sleep 1
+    show_menu
+    read_options
+}
+disable() {
+    wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/disable.sh
+    sh disable.sh
+    sleep 1
+    show_menu
+    read_options
+}
+menukill() {
+	rm -f menu.sh
+    rm -f testedit.sh
+	exit 0
+}
 show_menu() {
     clear
     echo "~V${VER}~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -29,24 +55,4 @@ read_options() {
     *) echo -e "${RED}Error...${STD}" && sleep 2 ;;
     esac
 }
-rebuild() {
-    wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/rebuild.sh
-    sh rebuild.sh
-    sleep 1
-    show_menu
-    read_options
-}
-enable() {
-    wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/enable.sh
-    sh enable.sh
-    sleep 1
-    show_menu
-    read_options
-}
-disable() {
-    wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/disable.sh
-    sh disable.sh
-    sleep 1
-    show_menu
-    read_options
-}
+
