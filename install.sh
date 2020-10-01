@@ -28,3 +28,4 @@ rm ./pjs/QI.sh
 echo "echo 'Starting Bot!'" >run.sh
 echo "node index.js" >run.sh
 echo "Bot Run File Made"
+rm -f install.sh

@@ -11,17 +11,16 @@ install() {
 	wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/install.sh
 	sh install.sh
 	sleep 1
-	# edit #still far to work in progress to even want to run this after install
+	edit
 }
 update() {
 	wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/update.sh
 	sh update.sh
 	sleep 1
-	rm update.sh
 }
 edit() {
-	show_menus2
-	read_options2
+	wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/edit.sh
+	sh edit.sh
 	sleep 1
 }
 back() {
@@ -34,7 +33,6 @@ rebuild() {
 	sleep 1
 	show_menus2
 	read_options2
-	rm -f rebuild.sh
 }
 enable() {
 	wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/enable.sh
@@ -42,7 +40,6 @@ enable() {
 	sleep 1
 	show_menus2
 	read_options2
-	rm -f enable.sh
 }
 disable() {
 	wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/disable.sh
@@ -50,16 +47,13 @@ disable() {
 	sleep 1
 	show_menus2
 	read_options2
-	rm -f disable.sh
 }
 remove() {
 	wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/remove.sh
 	sh remove.sh
 	sleep 1
-	rm -f remove.sh
-
 }
-show_menus1() {
+show_menus() {
 	if [ -d "./pjs" ]; then
 		clear
 		echo "~V${VER}~~~~~~~~~~~~"
@@ -78,22 +72,11 @@ show_menus1() {
 		echo "2. Exit"
 	fi
 }
-show_menus2() {
-	clear
-	echo "~V${VER}~~~~~~~~~~~~~~~~~~~~~~~~"
-	echo " P O T A T O . J S - C O N F I G"
-	echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	echo "1. Rebuild Config"
-	echo "2. Enable a Command"
-	echo "3. Disable a Command"
-	echo "4. Back"
-	echo "5. Exit"
-}
 menukill() {
 	rm -f menu.sh
 	exit 0
 }
-read_options1() {
+read_options() {
 	if [ -d "./pjs" ]; then
 		local choiceone
 		read -p "Enter choice [ 1 - 4 ] " choiceone
@@ -114,18 +97,6 @@ read_options1() {
 		esac
 	fi
 
-}
-read_options2() {
-	local choicetwo
-	read -p "Enter choice [ 1 - 5 ] " choicetwo
-	case $choicetwo in
-	1) rebuild ;;
-	2) enable ;;
-	3) disable ;;
-	4) back ;;
-	5) menukill ;;
-	*) echo -e "${RED}Error...${STD}" && sleep 2 ;;
-	esac
 }
 trap '' SIGINT SIGQUIT SIGTSTP
 while true; do
