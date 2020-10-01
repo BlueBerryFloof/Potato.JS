@@ -1,4 +1,4 @@
-VER="1.8.2~~"
+VER="1.8.4~~"
 MAIN =$(pwd)
 EDITOR=vim
 PASSWD=/etc/passwd
@@ -31,22 +31,19 @@ rebuild() {
 	wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/rebuild.sh
 	sh rebuild.sh
 	sleep 1
-	show_menus2
-	read_options2
+	edit
 }
 enable() {
 	wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/enable.sh
 	sh enable.sh
 	sleep 1
-	show_menus2
-	read_options2
+	edit
 }
 disable() {
 	wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/disable.sh
 	sh disable.sh
 	sleep 1
-	show_menus2
-	read_options2
+	edit
 }
 remove() {
 	wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/remove.sh
