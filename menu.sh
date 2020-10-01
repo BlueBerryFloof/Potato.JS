@@ -23,28 +23,6 @@ edit() {
 	sh edit.sh
 	sleep 1
 }
-back() {
-	show_menus
-	read_options
-}
-rebuild() {
-	wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/rebuild.sh
-	sh rebuild.sh
-	sleep 1
-	edit
-}
-enable() {
-	wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/enable.sh
-	sh enable.sh
-	sleep 1
-	edit
-}
-disable() {
-	wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/disable.sh
-	sh disable.sh
-	sleep 1
-	edit
-}
 remove() {
 	wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/remove.sh
 	sh remove.sh
