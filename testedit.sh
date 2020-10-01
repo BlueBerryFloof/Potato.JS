@@ -1,8 +1,10 @@
 pause() {
     read -p "Press [Enter] key to continue..." fackEnterKey
 }
-show_menu
-read_options
+while true; do
+	show_menu
+	read_options
+done
 back() {
     return
 }
@@ -56,3 +58,4 @@ read_options() {
     esac
 }
 
+rm -f testedit.sh
