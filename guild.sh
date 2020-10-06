@@ -5,42 +5,60 @@ KICK=./pjs/commands/guild/kick.js
 PRUNE=./pjs/commands/guild/prune.js
 
 pause() {
-	read -p "Press [Enter] key to continue..." fackEnterKey
+    read -p "Press [Enter] key to continue..." fackEnterKey
 }
 ban() {
     if [ -f "$BAN" ]; then
         rm -f $BAN
-        echo "Disabled BAN" 
+        echo "Disabled BAN"
     else
         wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/guild/ban.js
         mv ban.js $BAN
-        echo "Enabled BAN" 
+        echo "Enabled BAN"
     fi
     pause
 }
 kick() {
     if [ -f "$KICK" ]; then
         rm -f $KICK
-        echo "Disabled KICK" 
+        echo "Disabled KICK"
     else
         wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/guild/kick.js
         mv kick.js $KICK
-        echo "Enabled KICK" 
+        echo "Enabled KICK"
     fi
     pause
 }
 prune() {
     if [ -f "$PRUNE" ]; then
         rm -f $PRUNE
-        echo "Disabled PRUNE" 
+        echo "Disabled PRUNE"
     else
         wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/guild/prune.js
         mv prune.js $PRUNE
-        echo "Enabled PRUNE" 
+        echo "Enabled PRUNE"
     fi
     pause
 }
+onoff() {
+    if [ -f "$BAN" ]; then
+        echo "ban is on"
+    else
+        echo "ban if off"
+    fi
 
+    if [ -f "$KICK" ]; then
+        echo "kick is on"
+    else
+        echo "kick if off"
+    fi
+
+    if [ -f "$PRUNE" ]; then
+        echo "prune is on"
+    else
+        echo "prune if off"
+    fi
+}
 back() {
     rm -f guild.sh
     exit 0
@@ -54,6 +72,7 @@ show_menuGUILD() {
     echo "2. kick"
     echo "3. prune"
     echo "4. Back"
+    echo "?. What is On/Off"
 }
 read_optionsGUILD() {
     local choicetwo
@@ -63,6 +82,7 @@ read_optionsGUILD() {
     2) kick ;;
     3) prune ;;
     4) back ;;
+    ?) onoff ;;
     *) echo -e "${RED}Error...${STD}" && sleep 2 ;;
     esac
 }
