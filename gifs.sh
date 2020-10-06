@@ -1,94 +1,94 @@
 VER="1.8.8~~"
 
-ANIME=./pjs/commands/gifs/animegif.js
-FURRY=./pjs/commands/gifs/furry.js
-GIF=./pjs/commands/gifs/gif.js
-GINTAMA=./pjs/commands/gifs/gintama.js
-JOJO=./pjs/commands/gifs/jojo.js
+A=./pjs/commands/gifs/animegif.js
+B=./pjs/commands/gifs/furry.js
+C=./pjs/commands/gifs/gif.js
+D=./pjs/commands/gifs/gintama.js
+E=./pjs/commands/gifs/jojo.js
 
 pause() {
     read -p "Press [Enter] key to continue..." fackEnterKey
 }
 animegif() {
-    if [ -f "$ANIME" ]; then
-        rm -f $ANIME
+    if [ -f "$A" ]; then
+        rm -f $A
         echo "Disabled ANIME"
     else
         wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/gifs/animegif.js
-        mv animegif.js $ANIME
+        mv animegif.js $A
         echo "Enabled ANIME"
     fi
     pause
 }
 furry() {
-    if [ -f "$FURRY" ]; then
-        rm -f $FURRY
+    if [ -f "$B" ]; then
+        rm -f $B
         echo "Disabled FURRY"
     else
         wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/gifs/furry.js
-        mv furry.js $FURRY
+        mv furry.js $B
         echo "Enabled FURRY"
     fi
     pause
 }
 gif() {
-    if [ -f "$GIF" ]; then
-        rm -f $GIF
+    if [ -f "$C" ]; then
+        rm -f $C
         echo "Disabled GIF"
     else
         wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/gifs/gif.js
-        mv gif.js $GIF
+        mv gif.js $C
         echo "Enabled GIF"
     fi
     pause
 }
 gintama() {
-    if [ -f "$GINTAMA" ]; then
-        rm -f $GINTAMA
+    if [ -f "$D" ]; then
+        rm -f $D
         echo "Disabled GINTAMA"
     else
         wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/gifs/gintama.js
-        mv gintama.js $GINTAMA
+        mv gintama.js $D
         echo "Enabled GINTAMA"
     fi
     pause
 }
 jojo() {
-    if [ -f "$JOJO" ]; then
-        rm -f $JOJO
+    if [ -f "$E" ]; then
+        rm -f $E
     else
         wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/gifs/jojo.js
-        mv jojo.js $JOJO
+        mv jojo.js $E
     fi
     pause
 }
 
 onoff() {
-    if [ -f "$ANIME" ]; then
+    if [ -f "$A" ]; then
         echo "anime is on"
     else
         echo "anime if off"
     fi
 
-    if [ -f "$FURRY" ]; then
+    if [ -f "$B" ]; then
         echo "furry is on"
     else
         echo "furry if off"
     fi
 
-    if [ -f "$GIF" ]; then
+    if [ -f "$C" ]; then
         echo "gif is on"
     else
         echo "gif if off"
     fi
 
-    if [ -f "$GINTAMA" ]; then
+    if [ -f "$D" ]; then
         echo "gintama is on"
     else
         echo "gintama if off"
     fi
 
-    if [ -f "$JOJO" ]; then
+    if [ -f "$E" ]; then
         echo "jojo is on"
     else
         echo "jojo if off"
