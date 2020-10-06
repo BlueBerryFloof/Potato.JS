@@ -9,9 +9,10 @@ Easyish way to make a discord bot
 There are 2 methods to install 1. being the fancy .sh file that can be run in one command on linux and 2. being the commands that the .sh file runs and works on windows and mac.
 ### 1 (WIP)
 #### This is work in progress and will be un greyed when is in place if it is ungreyed it is inplace
-1. Download the QI.sh file
+1. Download the `potato` file
 2. Run the file
-3. Wait till it is done and input the config data in like a token and stuff into the config (WIP is the config editor).
+3. Start the istaller
+4. Wait till it is done and input the config data in like a token and stuff into the config (WIP is the config editor).
 
 > Things to know:
 > * It will create a run file name run.sh
