@@ -1,8 +1,10 @@
+VER="1.8.7~~"
 pause() {
     read -p "Press [Enter] key to continue..." fackEnterKey
 }
 back() {
-    return
+    rm -f testedit.sh
+    exit 0
 }
 rebuild() {
     wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/rebuild.sh
@@ -25,11 +27,6 @@ disable() {
     show_menu2
     read_options2
 }
-menukill() {
-	rm -f menu.sh
-    rm -f testedit.sh
-	exit 0
-}
 show_menu2() {
     clear
     echo "~V${VER}~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -39,7 +36,6 @@ show_menu2() {
     echo "2. Enable a Command"
     echo "3. Disable a Command"
     echo "4. Back"
-    echo "5. Exit"
 }
 read_options2() {
     local choicetwo
@@ -49,7 +45,6 @@ read_options2() {
     2) enable ;;
     3) disable ;;
     4) back ;;
-    5) menukill ;;
     *) echo -e "${RED}Error...${STD}" && sleep 2 ;;
     esac
 }
