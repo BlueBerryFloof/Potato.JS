@@ -1,15 +1,20 @@
+VER="1.8.8~~"
+
 ANIME=./pjs/commands/gifs/animegif.js
 FURRY=./pjs/commands/gifs/furry.js
 GIF=./pjs/commands/gifs/gif.js
 GINTAMA=./pjs/commands/gifs/gintama.js
 JOJO=./pjs/commands/gifs/jojo.js
-
+pause() {
+	read -p "Press [Enter] key to continue..." fackEnterKey
+}
 animegif() {
     if [ -f "$ANIME" ]; then
         echo "$ANIME exists."
     else
         echo "$ANIME does not exist."
     fi
+    pause
 }
 furry() {
     if [ -f "$FURRY" ]; then
@@ -17,6 +22,7 @@ furry() {
     else
         echo "$FURRY does not exist."
     fi
+    pause
 }
 gif() {
     if [ -f "$GIF" ]; then
@@ -24,6 +30,7 @@ gif() {
     else
         echo "$GIF does not exist."
     fi
+    pause
 }
 gintama() {
     if [ -f "$GINTAMA" ]; then
@@ -31,6 +38,7 @@ gintama() {
     else
         echo "$GINTAMA does not exist."
     fi
+    pause
 }
 jojo() {
     if [ -f "$JOJO" ]; then
@@ -38,6 +46,7 @@ jojo() {
     else
         echo "$JOJO does not exist."
     fi
+    pause
 }
 
 back() {
