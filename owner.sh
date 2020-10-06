@@ -75,7 +75,7 @@ show_menuOWNER() {
     echo "4. Back"
     echo "?. What is On/Off"
 }
-read_optionsOWNER) {
+read_optionsOWNER()) {
     local choicetwo
     read -p "Enter choice [ 1 - 4 ] " choicetwo
     case $choicetwo in
