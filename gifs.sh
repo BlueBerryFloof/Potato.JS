@@ -12,36 +12,44 @@ pause() {
 animegif() {
     if [ -f "$ANIME" ]; then
         rm -f $ANIME
+        echo "Disabled ANIME" 
     else
         wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/gifs/animegif.js
         mv animegif.js $ANIME
+        echo "Enabled ANIME" 
     fi
     pause
 }
 furry() {
     if [ -f "$FURRY" ]; then
         rm -f $FURRY
+        echo "Disabled FURRY" 
     else
         wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/gifs/furry.js
         mv furry.js $FURRY
+        echo "Enabled FURRY" 
     fi
     pause
 }
 gif() {
     if [ -f "$GIF" ]; then
         rm -f $GIF
+        echo "Disabled GIF" 
     else
         wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/gifs/gif.js
         mv gif.js $GIF
+        echo "Enabled GIF" 
     fi
     pause
 }
 gintama() {
     if [ -f "$GINTAMA" ]; then
         rm -f $GINTAMA
+        echo "Disabled GINTAMA" 
     else
         wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/gifs/gintama.js
         mv gintama.js $GINTAMA
+        echo "Enabled GINTAMA" 
     fi
     pause
 }
