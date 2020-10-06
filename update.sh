@@ -16,4 +16,9 @@ cd ./pjs
 npm i
 cd ../
 rm -rf Potato.JS
+
+echo "Please reconfig what is enabled and isn't."
+echo "This needs work but im too lazy to do it"
+pause
+
 rm -f update.sh
