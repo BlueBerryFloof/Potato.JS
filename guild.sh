@@ -58,6 +58,7 @@ onoff() {
     else
         echo "prune if off"
     fi
+    pause
 }
 back() {
     rm -f guild.sh

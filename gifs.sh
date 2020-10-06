@@ -93,6 +93,7 @@ onoff() {
     else
         echo "jojo if off"
     fi
+    pause
 }
 
 back() {
