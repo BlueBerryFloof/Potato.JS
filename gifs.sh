@@ -58,7 +58,7 @@ show_menuGIFS() {
 }
 read_optionsGIFS() {
     local choicetwo
-    read -p "Enter choice [ 1 - 5 ] " choicetwo
+    read -p "Enter choice [ 1 - 6 ] " choicetwo
     case $choicetwo in
     1) animegif ;;
     2) furry ;;

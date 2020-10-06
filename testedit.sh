@@ -22,18 +22,16 @@ show_menu2() {
     echo " P O T A T O . J S - C O N F I G"
     echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
     echo "1. Rebuild Config"
-    echo "2. Enable a Command"
-    echo "3. Disable a Command"
-    echo "4. Back"
+    echo "2. Toggle a Command"
+    echo "3. Back"
 }
 read_options2() {
     local choicetwo
-    read -p "Enter choice [ 1 - 5 ] " choicetwo
+    read -p "Enter choice [ 1 - 3 ] " choicetwo
     case $choicetwo in
     1) rebuild ;;
     2) toggle ;;
-    3) disable ;;
-    4) back ;;
+    3) back ;;
     *) echo -e "${RED}Error...${STD}" && sleep 2 ;;
     esac
 }
