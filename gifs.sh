@@ -14,6 +14,7 @@ animegif() {
         rm -f $ANIME
     else
         wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/gifs/animegif.js
+        mv animegif.js $ANIME
     fi
     pause
 }
@@ -22,6 +23,7 @@ furry() {
         rm -f $FURRY
     else
         wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/gifs/furry.js
+        mv furry.js $FURRY
     fi
     pause
 }
@@ -30,6 +32,7 @@ gif() {
         rm -f $GIF
     else
         wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/gifs/gif.js
+        mv gif.js $GIF
     fi
     pause
 }
@@ -38,6 +41,7 @@ gintama() {
         rm -f $GINTAMA
     else
         wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/gifs/gintama.js
+        mv gintama.js $GINTAMA
     fi
     pause
 }
@@ -46,6 +50,7 @@ jojo() {
         rm -f $JOJO
     else
         wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/gifs/jojo.js
+        mv jojo.js $JOJO
     fi
     pause
 }
