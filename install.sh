@@ -27,7 +27,7 @@ mv ./Potato.JS ./pjs
 cd ./pjs
 npm i
 cd ../
-rm ./pjs/QI.sh
+rm ./pjs/potato
 echo "echo 'Starting Bot!'" >run.sh
 echo "node index.js" >run.sh
 echo "Bot Run File Made"
