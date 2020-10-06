@@ -1,9 +1,16 @@
-VER="1.8.7~~"
+VER="1.8.8~~"
 MAIN =$(pwd)
 EDITOR=vim
 PASSWD=/etc/passwd
 RED='\033[0;41;30m'
 STD='\033[0;0;39m'
+BADINS=./QI.sh
+if [ -f "$BADINS" ]; then
+    echo "$BADINS exists. Please get new installer for better support."
+	rm -f menu.sh
+	rm -f QI.sh
+	exit 0
+else
 pause() {
 	read -p "Press [Enter] key to continue..." fackEnterKey
 }

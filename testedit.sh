@@ -1,4 +1,4 @@
-VER="1.8.7~~"
+VER="1.8.8~~"
 pause() {
     read -p "Press [Enter] key to continue..." fackEnterKey
 }
@@ -10,22 +10,11 @@ rebuild() {
     wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/rebuild.sh
     sh rebuild.sh
     sleep 1
-    show_menu2
-    read_options2
 }
-enable() {
-    wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/enable.sh
-    sh enable.sh
+toggle() {
+    wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/toggle.sh
+    sh toggle.sh
     sleep 1
-    show_menu2
-    read_options2
-}
-disable() {
-    wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/disable.sh
-    sh disable.sh
-    sleep 1
-    show_menu2
-    read_options2
 }
 show_menu2() {
     clear
@@ -42,7 +31,7 @@ read_options2() {
     read -p "Enter choice [ 1 - 5 ] " choicetwo
     case $choicetwo in
     1) rebuild ;;
-    2) enable ;;
+    2) toggle ;;
     3) disable ;;
     4) back ;;
     *) echo -e "${RED}Error...${STD}" && sleep 2 ;;
