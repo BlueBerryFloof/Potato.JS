@@ -34,7 +34,7 @@ sleep 1
 echo '    "youtubeAPI": "'${YOUTUBE}'"' >>config.json
 
 echo "}" >>config.json
-
+mv config.json ./pjs/config.json
 echo "Config Made"
 pause
 rm -f rebuild.sh
