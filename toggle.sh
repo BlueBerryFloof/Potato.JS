@@ -45,7 +45,7 @@ show_menu3() {
 }
 read_options3() {
     local choicetwo
-    read -p "Enter choice [ 1 - 5 ] " choicetwo
+    read -p "Enter choice [ 1 - 6 ] " choicetwo
     case $choicetwo in
     1) gifs ;;
     2) guild ;;
