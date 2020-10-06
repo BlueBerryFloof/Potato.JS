@@ -10,7 +10,7 @@ if [ -f "$BADINS" ]; then
 	rm -f menu.sh
 	rm -f QI.sh
 	exit 0
-else
+fi
 pause() {
 	read -p "Press [Enter] key to continue..." fackEnterKey
 }
