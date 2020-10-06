@@ -5,46 +5,47 @@ FURRY=./pjs/commands/gifs/furry.js
 GIF=./pjs/commands/gifs/gif.js
 GINTAMA=./pjs/commands/gifs/gintama.js
 JOJO=./pjs/commands/gifs/jojo.js
+
 pause() {
 	read -p "Press [Enter] key to continue..." fackEnterKey
 }
 animegif() {
     if [ -f "$ANIME" ]; then
-        echo "$ANIME exists."
+        rm -f $ANIME
     else
-        echo "$ANIME does not exist."
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/gifs/animegif.js
     fi
     pause
 }
 furry() {
     if [ -f "$FURRY" ]; then
-        echo "$FURRY exists."
+        rm -f $FURRY
     else
-        echo "$FURRY does not exist."
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/gifs/furry.js
     fi
     pause
 }
 gif() {
     if [ -f "$GIF" ]; then
-        echo "$GIF exists."
+        rm -f $GIF
     else
-        echo "$GIF does not exist."
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/gifs/gif.js
     fi
     pause
 }
 gintama() {
     if [ -f "$GINTAMA" ]; then
-        echo "$GINTAMA exists."
+        rm -f $GINTAMA
     else
-        echo "$GINTAMA does not exist."
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/gifs/gintama.js
     fi
     pause
 }
 jojo() {
     if [ -f "$JOJO" ]; then
-        echo "$JOJO exists."
+        rm -f $JOJO
     else
-        echo "$JOJO does not exist."
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/gifs/jojo.js
     fi
     pause
 }
