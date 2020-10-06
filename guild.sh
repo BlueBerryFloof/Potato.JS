@@ -47,9 +47,9 @@ back() {
 }
 show_menuGUILD() {
     clear
-    echo "~V${VER}~~~~~~~~~~~~~~~~~~~~"
-    echo " P O T A T O . J S - G I F S"
-    echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    echo "~V${VER}~~~~~~~~~~~~~~~~~~~~~~"
+    echo " P O T A T O . J S - G U I L D"
+    echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
     echo "1. ban"
     echo "2. kick"
     echo "3. prune"
