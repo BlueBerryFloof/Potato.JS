@@ -56,9 +56,11 @@ gintama() {
 jojo() {
     if [ -f "$E" ]; then
         rm -f $E
+        echo "Disabled JOJO"
     else
         wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/gifs/jojo.js
         mv jojo.js $E
+        echo "Enabled JOJO"
     fi
     pause
 }
