@@ -21,7 +21,7 @@ module.exports = class MemeCommand extends Command {
         var ext = "";
         var memeID = 0;
         var min = 1;
-        var max = 5
+        var max = 5;
         min = Math.ceil(min);
         max = Math.floor(max);
         var extID = (Math.floor(Math.random() * (max - min + 1)) + min);
@@ -30,7 +30,7 @@ module.exports = class MemeCommand extends Command {
             ext = ".gif"
 
             var minone = 1;
-            var maxone = 2
+            var maxone = 2;
             minone = Math.ceil(minone);
             maxone = Math.floor(maxone);
             memeID = (Math.floor(Math.random() * (maxone - minone + 1)) + minone);
@@ -38,7 +38,7 @@ module.exports = class MemeCommand extends Command {
             ext = ".jpg"
 
             var mintwo = 1;
-            var maxtwo = 8
+            var maxtwo = 8;
             mintwo = Math.ceil(mintwo);
             maxtwo = Math.floor(maxtwo);
             memeID = (Math.floor(Math.random() * (maxtwo - mintwo + 1)) + mintwo);
@@ -46,7 +46,7 @@ module.exports = class MemeCommand extends Command {
             ext = ".mov"
 
             var minthree = 1;
-            var maxthree = 11
+            var maxthree = 11;
             minthree = Math.ceil(minthree);
             maxthree = Math.floor(maxthree);
             memeID = (Math.floor(Math.random() * (maxthree - minthree + 1)) + minthree);
@@ -54,7 +54,7 @@ module.exports = class MemeCommand extends Command {
             ext = ".mp4"
 
             var minfour = 1;
-            var maxfour = 78
+            var maxfour = 78;
             minfour = Math.ceil(minfour);
             maxfour = Math.floor(maxfour);
             memeID = (Math.floor(Math.random() * (maxfour - minfour + 1)) + minfour);
@@ -62,7 +62,7 @@ module.exports = class MemeCommand extends Command {
             ext = ".png"
 
             var minfive = 1;
-            var maxfive = 6
+            var maxfive = 6;
             minfive = Math.ceil(minfive);
             maxfive = Math.floor(maxfive);
             memeID = (Math.floor(Math.random() * (maxfive - minfive + 1)) + minfive);

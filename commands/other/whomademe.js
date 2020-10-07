@@ -1,5 +1,5 @@
 const { Command } = require('discord.js-commando');
-
+const { discord_owner_id } = require('../../config.json');
 module.exports = class WhoMadeMeCommand extends Command {
   constructor(client) {
     super(client, {
@@ -12,8 +12,11 @@ module.exports = class WhoMadeMeCommand extends Command {
   }
 
   run(message) {
+    let inData = message.client.users.fetch(discord_owner_id);
+    let promise = Promise.resolve(inData);
+    let userDataAndShit = await promise;
     message.say(
-      'Made by @Blueberry#2336 with :heart:'
+      'Made by ' + userDataAndShit.username + '#' + userDataAndShit.discriminator + ' with :heart:'
     );
   }
 };
