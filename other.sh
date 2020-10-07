@@ -1,5 +1,7 @@
-VER="1.8.8~~"
-
+PONE=`sed -n 1p menu.sh`
+PTWO=`echo "${PONE}" | sed -r 's/^.{5}//'`
+VER=`echo "${PTWO}" | rev | cut -c2- | rev`
+# VER="1.8.8~~"
 A=./pjs/commands/other/cat.js
 B=./pjs/commands/other/chucknorris.js
 C=./pjs/commands/other/fortune.js
