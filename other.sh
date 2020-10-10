@@ -25,55 +25,55 @@ pause() {
 cat() {
     if [ -f "$A" ]; then
         rm -f $A
-        echo "Disabled CAT"
+        echo "Disabled cat"
     else
         wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/other/cat.js
         mv cat.js $A
-        echo "Enabled CAT"
+        echo "Enabled cat"
     fi
     pause
 }
 chucknorris() {
     if [ -f "$B" ]; then
         rm -f $B
-        echo "Disabled CHUCKNORRIS"
+        echo "Disabled chucknorris"
     else
         wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/other/chucknorris.js
         mv chucknorris.js $B
-        echo "Enabled CHUCKNORRIS"
+        echo "Enabled chucknorris"
     fi
     pause
 }
 fortune() {
     if [ -f "$C" ]; then
         rm -f $C
-        echo "Disabled FORTUNE"
+        echo "Disabled fortune"
     else
         wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/other/fortune.js
         mv fortune.js $C
-        echo "Enabled FORTUNE"
+        echo "Enabled fortune"
     fi
     pause
 }
 insult() {
     if [ -f "$D" ]; then
         rm -f $D
-        echo "Disabled INSULT"
+        echo "Disabled insult"
     else
         wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/other/insult.js
         mv insult.js $D
-        echo "Enabled INSULT"
+        echo "Enabled insult"
     fi
     pause
 }
 meme() {
     if [ -f "$E" ]; then
         rm -f $E
-        echo "Disabled MEME"
+        echo "Disabled meme"
     else
         wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/other/meme.js
         mv meme.js $E
-        echo "Enabled MEME"
+        echo "Enabled meme"
     fi
     pause
 }
@@ -290,6 +290,12 @@ onoff() {
         echo "world-news if off"
     fi
     
+    if [ -f "$P" ]; then
+        echo "ynet-news is on"
+    else
+        echo "ynet-news if off"
+    fi
+
     pause
 }
 
@@ -299,9 +305,9 @@ back() {
 }
 show_menuOTHER() {
     clear
-    echo "~V${VER}~~~~~~~~~~~~~~~~~~~~"
-    echo " P O T A T O . J S - G I F S"
-    echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    echo "~V${VER}~~~~~~~~~~~~~~~~~~~~~~"
+    echo " P O T A T O . J S - O T H E R"
+    echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
     echo "a. cat"
     echo "b. chucknorris"
     echo "c. fortune"

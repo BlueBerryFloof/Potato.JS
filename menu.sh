@@ -1,4 +1,4 @@
-VER="1.8.8~~"
+VER="1.8.9~~"
 MAIN =$(pwd)
 EDITOR=vim
 PASSWD=/etc/passwd
