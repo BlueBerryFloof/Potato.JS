@@ -7,7 +7,7 @@ if [ 1 -eq 0 ]; then
     B=./pjs/commands/music/musictrivia.js
     C=./pjs/commands/music/volume.js
 
-    pause() {
+    hold() {
         read -p "Press [Enter] key to continue..." fackEnterKey
     }
     GMCP() {
@@ -54,7 +54,7 @@ if [ 1 -eq 0 ]; then
             mv skipto.js rm -f ./pjs/commands/music/skipto.js
             echo "Enabled GENERAL MUSIC COMMANDS PACKAGE"
         fi
-        pause
+        hold
     }
     MTCP() {
         if [ -f "$B" ]; then
@@ -68,7 +68,7 @@ if [ 1 -eq 0 ]; then
             mv stopmusictrivia.js $B
             echo "Enabled MUSIC TRIVIA COMMANDS PACKAGE"
         fi
-        pause
+        hold
     }
     volume() {
         if [ -f "$C" ]; then
@@ -79,7 +79,7 @@ if [ 1 -eq 0 ]; then
             mv volume.js $C
             echo "Enabled volume"
         fi
-        pause
+        hold
     }
     onoff() {
         if [ -f "$A" ]; then
@@ -99,7 +99,7 @@ if [ 1 -eq 0 ]; then
         else
             echo "volume if off"
         fi
-        pause
+        hold
     }
     back() {
         rm -f music.sh
@@ -150,7 +150,7 @@ M=./pjs/commands/music/skipto.js
 N=./pjs/commands/music/stopmusictrivia.js
 O=./pjs/commands/music/volume.js
 
-pause() {
+hold() {
     read -p "Press [Enter] key to continue..." fackEnterKey
 }
 leave() {
@@ -162,7 +162,7 @@ leave() {
         mv leave.js $A
         echo "Enabled leave"
     fi
-    pause
+    hold
 }
 loop() {
     if [ -f "$B" ]; then
@@ -173,7 +173,7 @@ loop() {
         mv loop.js $B
         echo "Enabled loop"
     fi
-    pause
+    hold
 }
 musictrivia() {
     if [ -f "$C" ]; then
@@ -184,7 +184,7 @@ musictrivia() {
         mv musictrivia.js $C
         echo "Enabled musictrivia"
     fi
-    pause
+    hold
 }
 nowplaying() {
     if [ -f "$D" ]; then
@@ -195,7 +195,7 @@ nowplaying() {
         mv nowplaying.js $D
         echo "Enabled nowplaying"
     fi
-    pause
+    hold
 }
 pause() {
     if [ -f "$E" ]; then
@@ -206,7 +206,7 @@ pause() {
         mv pause.js $E
         echo "Enabled pause"
     fi
-    pause
+    hold
 }
 play() {
     if [ -f "$F" ]; then
@@ -217,7 +217,7 @@ play() {
         mv play.js $F
         echo "Enabled play"
     fi
-    pause
+    hold
 }
 queue() {
     if [ -f "$G" ]; then
@@ -228,7 +228,7 @@ queue() {
         mv queue.js $G
         echo "Enabled queue"
     fi
-    pause
+    hold
 }
 remove() {
     if [ -f "$H" ]; then
@@ -239,7 +239,7 @@ remove() {
         mv remove.js $H
         echo "Enabled remove"
     fi
-    pause
+    hold
 }
 resume() {
     if [ -f "$I" ]; then
@@ -250,7 +250,7 @@ resume() {
         mv resume.js $I
         echo "Enabled resume"
     fi
-    pause
+    hold
 }
 shuffle() {
     if [ -f "$J" ]; then
@@ -261,7 +261,7 @@ shuffle() {
         mv shuffle.js $J
         echo "Enabled shuffle"
     fi
-    pause
+    hold
 }
 skip() {
     if [ -f "$K" ]; then
@@ -272,7 +272,7 @@ skip() {
         mv skip.js $K
         echo "Enabled skip"
     fi
-    pause
+    hold
 }
 skipall() {
     if [ -f "$L" ]; then
@@ -283,7 +283,7 @@ skipall() {
         mv skipall.js $L
         echo "Enabled skipall"
     fi
-    pause
+    hold
 }
 skipto() {
     if [ -f "$M" ]; then
@@ -294,7 +294,7 @@ skipto() {
         mv skipto.js $M
         echo "Enabled skipto"
     fi
-    pause
+    hold
 }
 stopmusictrivia() {
     if [ -f "$N" ]; then
@@ -305,7 +305,7 @@ stopmusictrivia() {
         mv stopmusictrivia.js $N
         echo "Enabled stopmusictrivia"
     fi
-    pause
+    hold
 }
 volume() {
     if [ -f "$O" ]; then
@@ -316,7 +316,7 @@ volume() {
         mv volume.js $O
         echo "Enabled volume"
     fi
-    pause
+    hold
 }
 
 onoff() {
@@ -410,7 +410,7 @@ onoff() {
         echo "volume if off"
     fi
     
-    pause
+    hold
 }
 
 back() {
