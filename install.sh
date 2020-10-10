@@ -26,6 +26,7 @@ git clone https://github.com/BlueBerryFloof/Potato.JS.git
 mv ./Potato.JS ./pjs
 cd ./pjs
 npm i
+npm audit fix
 cd ../
 rm ./pjs/potato
 echo "echo 'Starting Bot!'" >run.sh
