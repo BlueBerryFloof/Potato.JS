@@ -1,6 +1,6 @@
-PONE=`sed -n 1p menu.sh`
-PTWO=`echo "${PONE}" | sed -r 's/^.{5}//'`
-VER=`echo "${PTWO}" | rev | cut -c2- | rev`
+PONE=$(sed -n 1p menu.sh)
+PTWO=$(echo "${PONE}" | sed -r 's/^.{5}//')
+VER=$(echo "${PTWO}" | rev | cut -c2- | rev)
 # VER="1.8.8~~"
 A=./pjs/commands/other/cat.js
 B=./pjs/commands/other/chucknorris.js
@@ -235,67 +235,152 @@ onoff() {
     else
         echo "motivation if off"
     fi
-    
+
     if [ -f "$G" ]; then
         echo "ntd is on"
     else
         echo "ntd if off"
     fi
-    
+
     if [ -f "$H" ]; then
         echo "quotethat is on"
     else
         echo "quotethat if off"
     fi
-    
+
     if [ -f "$I" ]; then
         echo "random is on"
     else
         echo "random if off"
     fi
-    
+
     if [ -f "$J" ]; then
         echo "reddit is on"
     else
         echo "reddit if off"
     fi
-    
+
     if [ -f "$K" ]; then
         echo "reminder is on"
     else
         echo "reminder if off"
     fi
-    
+
     if [ -f "$L" ]; then
         echo "say is on"
     else
         echo "say if off"
     fi
-    
+
     if [ -f "$M" ]; then
         echo "uptime is on"
     else
         echo "uptime if off"
     fi
-    
+
     if [ -f "$N" ]; then
         echo "whomademe is on"
     else
         echo "whomademe if off"
     fi
-    
+
     if [ -f "$O" ]; then
         echo "world-news is on"
     else
         echo "world-news if off"
     fi
-    
+
     if [ -f "$P" ]; then
         echo "ynet-news is on"
     else
         echo "ynet-news if off"
     fi
 
+    pause
+}
+
+reset() {
+    if [ ! -f "$A" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/other/cat.js
+        mv cat.js $A
+    fi
+
+    if [ ! -f "$B" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/other/chucknorris.js
+        mv chucknorris.js $B
+    fi
+
+    if [ ! -f "$C" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/other/fortune.js
+        mv fortune.js $C
+    fi
+
+    if [ ! -f "$D" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/other/insult.js
+        mv insult.js $D
+    fi
+
+    if [ ! -f "$E" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/other/meme.js
+        mv meme.js $E
+    fi
+
+    if [ ! -f "$F" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/other/motivation.js
+        mv motivation.js $F
+    fi
+
+    if [ ! -f "$G" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/other/ntd.js
+        mv ntd.js $G
+    fi
+
+    if [ ! -f "$H" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/other/quotethat.js
+        mv quotethat.js $H
+    fi
+
+    if [ ! -f "$I" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/other/random.js
+        mv random.js $I
+    fi
+
+    if [ ! -f "$J" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/other/reddit.js
+        mv reddit.js $J
+    fi
+
+    if [ ! -f "$K" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/other/reminder.js
+        mv reminder.js $K
+    fi
+
+    if [ ! -f "$L" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/other/say.js
+        mv say.js $L
+    fi
+
+    if [ ! -f "$M" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/other/uptime.js
+        mv uptime.js $M
+    fi
+
+    if [ ! -f "$N" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/other/whomademe.js
+        mv whomademe.js $N
+    fi
+
+    if [ ! -f "$O" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/other/world-news.js
+        mv world-news.js $O
+    fi
+
+    if [ ! -f "$P" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/other/ynet-news.js
+        mv ynet-news.js $P
+    fi
+
+    echo "All commands reset"
     pause
 }
 
@@ -324,6 +409,7 @@ show_menuOTHER() {
     echo "n. whomademe"
     echo "o. world-news"
     echo "p. ynet-news"
+    echo "R. Reset All to On"
     echo "!. Back"
     echo "?. What is On/Off"
 }
@@ -347,6 +433,7 @@ read_optionsOTHER() {
     n) whomademe ;;
     o) worldnews ;;
     p) ynetnews ;;
+    R) reset ;;
     !) back ;;
     ?) onoff ;;
     *) echo -e "${RED}Error...${STD}" && sleep 2 ;;

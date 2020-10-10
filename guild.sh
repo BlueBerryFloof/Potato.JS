@@ -1,6 +1,6 @@
-PONE=`sed -n 1p menu.sh`
-PTWO=`echo "${PONE}" | sed -r 's/^.{5}//'`
-VER=`echo "${PTWO}" | rev | cut -c2- | rev`
+PONE=$(sed -n 1p menu.sh)
+PTWO=$(echo "${PONE}" | sed -r 's/^.{5}//')
+VER=$(echo "${PTWO}" | rev | cut -c2- | rev)
 # VER="1.8.8~~"
 
 A=./pjs/commands/guild/ban.js
@@ -63,6 +63,25 @@ onoff() {
     fi
     pause
 }
+
+reset() {
+    if [ ! -f "$A" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/guild/ban.js
+        mv ban.js $A
+    fi
+
+    if [ ! -f "$B" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/guild/kick.js
+        mv kick.js $B
+    fi
+
+    if [ ! -f "$C" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/guild/prune.js
+        mv prune.js $C
+    fi
+    pause
+}
+
 back() {
     rm -f guild.sh
     exit 0
@@ -75,6 +94,7 @@ show_menuGUILD() {
     echo "1. ban"
     echo "2. kick"
     echo "3. prune"
+    echo "R. Reset All to On"
     echo "4. Back"
     echo "?. What is On/Off"
 }
@@ -85,6 +105,7 @@ read_optionsGUILD() {
     1) ban ;;
     2) kick ;;
     3) prune ;;
+    R) reset ;;
     4) back ;;
     ?) onoff ;;
     *) echo -e "${RED}Error...${STD}" && sleep 2 ;;

@@ -1,6 +1,6 @@
-PONE=`sed -n 1p menu.sh`
-PTWO=`echo "${PONE}" | sed -r 's/^.{5}//'`
-VER=`echo "${PTWO}" | rev | cut -c2- | rev`
+PONE=$(sed -n 1p menu.sh)
+PTWO=$(echo "${PONE}" | sed -r 's/^.{5}//')
+VER=$(echo "${PTWO}" | rev | cut -c2- | rev)
 # VER="1.8.8~~"
 
 A=./pjs/commands/gifs/animegif.js
@@ -101,6 +101,36 @@ onoff() {
     pause
 }
 
+reset() {
+    if [ ! -f "$A" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/gifs/animegif.js
+        mv animegif.js $A
+    fi
+
+    if [ ! -f "$B" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/gifs/furry.js
+        mv furry.js $B
+    fi
+
+    if [ ! -f "$C" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/gifs/gif.js
+        mv gif.js $C
+    fi
+
+    if [ ! -f "$D" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/gifs/gintama.js
+        mv gintama.js $D
+    fi
+
+    if [ ! -f "$E" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/gifs/jojo.js
+        mv jojo.js $E
+    fi
+
+    echo "All commands reset"
+    pause
+}
+
 back() {
     rm -f gifs.sh
     exit 0
@@ -115,6 +145,7 @@ show_menuGIFS() {
     echo "3. gif search"
     echo "4. gintama"
     echo "5. jojo"
+    echo "R. Reset All to On"
     echo "6. Back"
     echo "?. What is On/Off"
 }
@@ -127,6 +158,7 @@ read_optionsGIFS() {
     3) gif ;;
     4) gintama ;;
     5) jojo ;;
+    R) reset ;;
     6) back ;;
     ?) onoff ;;
     *) echo -e "${RED}Error...${STD}" && sleep 2 ;;

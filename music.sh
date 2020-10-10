@@ -2,137 +2,6 @@ PONE=$(sed -n 1p menu.sh)
 PTWO=$(echo "${PONE}" | sed -r 's/^.{5}//')
 VER=$(echo "${PTWO}" | rev | cut -c2- | rev)
 # VER="1.8.8~~"
-if [ 1 -eq 0 ]; then
-    A=./pjs/commands/music/play.js
-    B=./pjs/commands/music/musictrivia.js
-    C=./pjs/commands/music/volume.js
-
-    hold() {
-        read -p "Press [Enter] key to continue..." fackEnterKey
-    }
-    GMCP() {
-        if [ -f "$A" ]; then
-            rm -f $A
-            rm -f ./pjs/commands/music/leave.js
-            rm -f ./pjs/commands/music/skip.js
-            rm -f ./pjs/commands/music/shuffle.js
-            rm -f ./pjs/commands/music/loop.js
-            rm -f ./pjs/commands/music/nowplaying.js
-            rm -f ./pjs/commands/music/pause.js
-            rm -f ./pjs/commands/music/queue.js
-            rm -f ./pjs/commands/music/remove.js
-            rm -f ./pjs/commands/music/resume.js
-            rm -f ./pjs/commands/music/skip.js
-            rm -f ./pjs/commands/music/skipall.js
-            rm -f ./pjs/commands/music/skipto.js
-            echo "Disabled GENERAL MUSIC COMMANDS PACKAGE"
-        else
-            wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/music/play.js
-            wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/music/leave.js
-            wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/music/skip.js
-            wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/music/shuffle.js
-            wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/music/loop.js
-            wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/music/nowplaying.js
-            wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/music/pause.js
-            wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/music/queue.js
-            wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/music/remove.js
-            wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/music/resume.js
-            wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/music/skip.js
-            wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/music/skipall.js
-            wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/music/skipto.js
-            mv play.js $A
-            mv skip.js rm -f ./pjs/commands/music/skip.js
-            mv shuffle.js rm -f ./pjs/commands/music/shuffle.js
-            mv leave.js rm -f ./pjs/commands/music/leave.js
-            mv loop.js rm -f ./pjs/commands/music/loop.js
-            mv nowplaying.js rm -f ./pjs/commands/music/nowplaying.js
-            mv pause.js rm -f ./pjs/commands/music/pause.js
-            mv queue.js rm -f ./pjs/commands/music/queue.js
-            mv remove.js rm -f ./pjs/commands/music/remove.js
-            mv resume.js rm -f ./pjs/commands/music/resume.js
-            mv skipall.js rm -f ./pjs/commands/music/skipall.js
-            mv skipto.js rm -f ./pjs/commands/music/skipto.js
-            echo "Enabled GENERAL MUSIC COMMANDS PACKAGE"
-        fi
-        hold
-    }
-    MTCP() {
-        if [ -f "$B" ]; then
-            rm -f $B
-            rm -f ./pjs/commands/music/stopmusictrivia.js
-            echo "Disabled MUSIC TRIVIA COMMANDS PACKAGE"
-        else
-            wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/music/musictrivia.js
-            wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/music/stopmusictrivia.js
-            mv musictrivia.js $B
-            mv stopmusictrivia.js $B
-            echo "Enabled MUSIC TRIVIA COMMANDS PACKAGE"
-        fi
-        hold
-    }
-    volume() {
-        if [ -f "$C" ]; then
-            rm -f $C
-            echo "Disabled volume"
-        else
-            wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/music/volume.js
-            mv volume.js $C
-            echo "Enabled volume"
-        fi
-        hold
-    }
-    onoff() {
-        if [ -f "$A" ]; then
-            echo "GENERAL MUSIC COMMANDS PACKAGE is on"
-        else
-            echo "GENERAL MUSIC COMMANDS PACKAGE if off"
-        fi
-
-        if [ -f "$B" ]; then
-            echo "MUSIC TRIVIA COMMANDS PACKAGE is on"
-        else
-            echo "MUSIC TRIVIA COMMANDS PACKAGE if off"
-        fi
-
-        if [ -f "$C" ]; then
-            echo "volume is on"
-        else
-            echo "volume if off"
-        fi
-        hold
-    }
-    back() {
-        rm -f music.sh
-        exit 0
-    }
-    show_menuMUSIC() {
-        clear
-        echo "~V${VER}~~~~~~~~~~~~~~~~~~~~~~"
-        echo " P O T A T O . J S - M U S I C"
-        echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-        echo "1. GENERAL MUSIC COMMANDS PACKAGE"
-        echo "2. MUSIC TRIVIA COMMANDS PACKAGE"
-        echo "3. volume"
-        echo "!. Back"
-        echo "?. What is On/Off"
-    }
-    read_optionsMUSIC() {
-        local choicetwo
-        read -p "Enter choice [ 1 - 4 ] " choicetwo
-        case $choicetwo in
-        1) GMCP ;;
-        2) MTCP ;;
-        3) volume ;;
-        !) back ;;
-        ?) onoff ;;
-        *) echo -e "${RED}Error...${STD}" && sleep 2 ;;
-        esac
-    }
-    while true; do
-        show_menuMUSIC
-        read_optionsMUSIC
-    done
-fi
 
 A=./pjs/commands/music/leave.js
 B=./pjs/commands/music/loop.js
@@ -355,64 +224,143 @@ onoff() {
     else
         echo "play if off"
     fi
-    
+
     if [ -f "$G" ]; then
         echo "queue is on"
     else
         echo "queue if off"
     fi
-    
+
     if [ -f "$H" ]; then
         echo "remove is on"
     else
         echo "remove if off"
     fi
-    
+
     if [ -f "$I" ]; then
         echo "resume is on"
     else
         echo "resume if off"
     fi
-    
+
     if [ -f "$J" ]; then
         echo "shuffle is on"
     else
         echo "shuffle if off"
     fi
-    
+
     if [ -f "$K" ]; then
         echo "skip is on"
     else
         echo "skip if off"
     fi
-    
+
     if [ -f "$L" ]; then
         echo "skipall is on"
     else
         echo "skipall if off"
     fi
-    
+
     if [ -f "$M" ]; then
         echo "skipto is on"
     else
         echo "skipto if off"
     fi
-    
+
     if [ -f "$N" ]; then
         echo "stopmusictrivia is on"
     else
         echo "stopmusictrivia if off"
     fi
-    
+
     if [ -f "$O" ]; then
         echo "volume is on"
     else
         echo "volume if off"
     fi
-    
+
     hold
 }
 
+reset() {
+    if [ ! -f "$A" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/music/leave.js
+        mv leave.js $A
+    fi
+
+    if [ -f "$B" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/music/loop.js
+        mv loop.js $B
+    fi
+
+    if [ ! -f "$C" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/music/musictrivia.js
+        mv musictrivia.js $C
+    fi
+
+    if [ ! -f "$D" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/music/nowplaying.js
+        mv nowplaying.js $D
+    fi
+
+    if [ ! -f "$E" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/music/pause.js
+        mv pause.js $E
+    fi
+
+    if [ ! -f "$F" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/music/play.js
+        mv play.js $F
+    fi
+
+    if [ ! -f "$G" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/music/queue.js
+        mv queue.js $G
+    fi
+
+    if [ ! -f "$H" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/music/remove.js
+        mv remove.js $H
+    fi
+
+    if [ ! -f "$I" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/music/resume.js
+        mv resume.js $I
+    fi
+
+    if [ ! -f "$J" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/music/shuffle.js
+        mv shuffle.js $J
+    fi
+
+    if [ ! -f "$K" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/music/skip.js
+        mv skip.js $K
+    fi
+
+    if [ ! -f "$L" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/music/skipall.js
+        mv skipall.js $L
+    fi
+
+    if [ ! -f "$M" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/music/skipto.js
+        mv skipto.js $M
+    fi
+
+    if [ ! -f "$N" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/music/stopmusictrivia.js
+        mv stopmusictrivia.js $N
+    fi
+
+    if [ ! -f "$O" ]; then
+        wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/master/commands/music/volume.js
+        mv volume.js $O
+    fi
+
+    echo "All commands reset"
+    hold
+}
 back() {
     rm -f music.sh
     exit 0
@@ -437,6 +385,7 @@ show_menumusic() {
     echo "m. skipto"
     echo "n. stopmusictrivia"
     echo "o. volume"
+    echo "R. Reset All to On"
     echo "!. Back"
     echo "?. What is On/Off"
 }
@@ -459,6 +408,7 @@ read_optionsmusic() {
     m) skipto ;;
     n) stopmusictrivia ;;
     o) volume ;;
+    R) reset ;;
     !) back ;;
     ?) onoff ;;
     *) echo -e "${RED}Error...${STD}" && sleep 2 ;;
