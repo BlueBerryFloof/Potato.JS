@@ -46,7 +46,7 @@ show_menus() {
 		echo "~V${VER}~~~~~~~~~~~~"
 		echo " P O T A T O . J S"
 		echo "~~~~~~~~~~~~~~~~~~~~~"
-		echo "${RED}1. Update Potato.JS - W.I.P. AGAIN${STD}"
+		echo "1. Update Potato.JS"
 		echo "2. Edit Potato.JS"
 		echo "3. Remove Potato.JS"
 		echo "4. Exit"

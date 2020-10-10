@@ -315,6 +315,7 @@ mv -fv ./Potato.JS/resources/music/* ./pjs/resources/music
 mv -fv ./Potato.JS/resources/quotes/* ./pjs/resources/quotes
 cd ./pjs
 npm i
+npm audit fix
 cd ../
 rm -rf Potato.JS
 pause
