@@ -19,7 +19,11 @@ echo '    "discord_owner_id": "'${OWNER}'"' >>config.json
 
 read -p "What is the Bot's ID: " BOT
 sleep 1
-echo '    "prefix": "'${BOT}'"' >>config.json
+echo '    "bot_id": "'${BOT}'"' >>config.json
+
+read -p "What is the Discord Server's Invite link: " SUPPORT
+sleep 1
+echo '    "support": "'${SUPPORT}'"' >>config.json
 
 read -p "TenorAPI Key (Get one at: https://tenor.com/developer/keyregistration ): " TENOR
 sleep 1
