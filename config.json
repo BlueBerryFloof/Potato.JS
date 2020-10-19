@@ -2,6 +2,7 @@
     "prefix": "prefix of choice",
     "discord_owner_id": "get the dev's snoflake and put it here",
     "bot_id": "get the bot's snoflake and put it here",
+    "support": "Support server discord link",
     "token": " - PUT BOT TOKEN HERE - ",
     "tenorAPI": "MIUI12MIBEXV",
     "newsAPI": "get api key at https://newsapi.org/ ",
