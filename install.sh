@@ -32,6 +32,6 @@ rm ./pjs/potato
 echo "wget -nv --show-progress https://raw.githubusercontent.com/BlueBerryFloof/Potato.JS/Installer/remove.sh" >run.sh
 echo "sh quickupdate.sh" >run.sh
 echo "echo 'Starting Bot!'" >run.sh
-echo "node index.js" >run.sh
+echo "node pjs/index.js" >run.sh
 echo "Bot Run File Made"
 rm -f install.sh
