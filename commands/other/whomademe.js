@@ -11,7 +11,7 @@ module.exports = class WhoMadeMeCommand extends Command {
     });
   }
 
-  run(message) {
+  async run(message) {
     let inData = message.client.users.fetch(discord_owner_id);
     let promise = Promise.resolve(inData);
     let userDataAndShit = await promise;
